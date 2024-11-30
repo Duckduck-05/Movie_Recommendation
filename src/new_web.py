@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from collaborative_filtering import CF
+from notebooks.collaborative_filtering import CF
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Define movie data columns
