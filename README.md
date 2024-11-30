@@ -24,7 +24,7 @@ This project is a movie recommendation system that suggests movies based on user
 ## Usage
 1. Run the application:
     ```bash
-    python src/web.py
+    streamlit run src/web.py
     ```
 2. Follow the on-screen instructions to get movie recommendations.
 
