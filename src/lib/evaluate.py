@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from notebooks.get_items_rated import get_items_rated_by_user
+from lib.get_items_rated import get_items_rated_by_user
 
 def evaluate_RMSE(Yhat, rates, n_users, W, b):
     se = 0

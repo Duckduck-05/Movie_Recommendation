@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from notebooks.collaborative_filtering import CF
+from lib.collaborative_filtering import CF
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Define movie data columns
@@ -17,11 +17,11 @@ genres = [
 ]
 
 # Load movie data
-items = pd.read_csv('ml-100k/u.item', sep='|', names=i_cols, encoding='latin-1')
+items = pd.read_csv('data/ml-100k/u.item', sep='|', names=i_cols, encoding='latin-1')
 
 # Load ratings data
 r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
-ratings_base = pd.read_csv('ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
+ratings_base = pd.read_csv('data/ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
 
 # Function to recommend movies for new users based on genre preferences
 def recommend_movies_for_new_user(user_selected_genres, items, genres, top_n=10):

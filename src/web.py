@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
-from notebooks.collaborative_filtering import CF
+from lib.collaborative_filtering import CF
 
 i_cols = ['movie id', 'movie title' ,'release date','video release date', 'IMDb URL', 'unknown', 'Action', 'Adventure',
  'Animation', 'Children\'s', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy',
