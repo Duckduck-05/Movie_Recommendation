@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
+from collaborative_filtering import CF
 
 i_cols = ['movie id', 'movie title' ,'release date','video release date', 'IMDb URL', 'unknown', 'Action', 'Adventure',
  'Animation', 'Children\'s', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy',
@@ -15,6 +16,11 @@ genres = [
 ]
 
 items = pd.read_csv('ml-100k/u.item', sep='|', names=i_cols, encoding='latin-1')
+
+r_cols = ['user_id', 'movie_id', 'rating', 'unix_timestamp']
+
+ratings_base = pd.read_csv('ml-100k/ua.base', sep='\t', names=r_cols, encoding='latin-1')
+
 
 
 def recommend_movies(user_selected_genres, items, genres, top_n=10):
@@ -89,7 +95,6 @@ if st.button('Submit'):
             # Here, call your content-based recommendation system
             st.write("Using Content-Based Model to recommend films based on your selected genres...")
 
-            
             # Get recommendations from content-based model
             recommended_movies = recommend_movies(selected_genres, items, genres)
 
@@ -105,8 +110,12 @@ if st.button('Submit'):
             # Here, call your collaborative filtering recommendation system
             st.write("Using Collaborative Filtering Model to recommend films based on user preferences...")
             # You can call your collaborative filtering recommendation logic here, e.g.,
-            # recommendations = collaborative_filtering_recommendation(selected_genres)
+            rate_train = ratings_base.values
+            rate_train[:, :2] -= 1  # Adjust for 0-indexing
 
+            # Initialize CF model (user-user CF, k=30)
+            cf_model = CF(rate_train, k=30, uuCF=1)  # Change `uuCF=0` for item-item CF
+            cf_model.fit()  # Fit the model
             # Simulated recommendations for demonstration purposes
             recommended_movies = ["Movie A", "Movie B", "Movie C", "Movie D", "Movie E"]
             st.write("Recommended Movies (Collaborative Filtering):")
