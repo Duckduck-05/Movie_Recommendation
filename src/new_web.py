@@ -109,7 +109,7 @@ elif user_type == 'Current User':
         st.write(f"Movies that user {user_id} has watched:")
 
         # Get and display the movies the current user has watched
-        watched_movies = get_watched_movies(user_id, ratings_base, items)
+        watched_movies = get_watched_movies(user_id, ratings_base, items)[:10]
         if not watched_movies.empty:
             for idx, movie in watched_movies.iterrows():
                 st.write(f"**{movie['movie title']}**")
