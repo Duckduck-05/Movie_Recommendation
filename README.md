@@ -38,15 +38,15 @@ Movie_Recommendation/
 │   │   ├── collaborative_filtering.py
 │   │   ├── evaluate.py
 │   │   └── get_items_rated.py
-│   ├── recommend_app_svd.py
-│   ├── web.py
-│   └── new_web.py
+│   └── web.py
 │
 ├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
 
+## Report and Presentation
+For more details, please refer to our [full report](./Report_FundamentalsofOptimization_IT3052E.pdf) and [presentation](./presentation/Presentation.pdf).
 
 ## Features
 - Personalized movie recommendations
@@ -70,7 +70,7 @@ Movie_Recommendation/
 ## Usage
 1. Run the application:
     ```bash
-    streamlit run src/new_web.py
+    streamlit run ./src/web.py
     ```
 2. Follow the on-screen instructions to get movie recommendations.
 
