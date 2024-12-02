@@ -46,7 +46,7 @@ Movie_Recommendation/
 ```
 
 ## Report and Presentation
-For more details, please refer to our [full report](./presentation and report/Movie_Recommendation_Report.pdf) and [presentation](./presentation and report/Movie Recommendation.pptx.pdf).
+For more details, please refer to our [full report](./presentation%20and%20report/Movie_Recommendation_Report.pdf) and [presentation](./presentation%20and%20report/Movie%20Recommendation.pptx.pdf).
 
 ## Features
 - Personalized movie recommendations
