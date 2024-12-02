@@ -46,7 +46,7 @@ Movie_Recommendation/
 ```
 
 ## Report and Presentation
-For more details, please refer to our [full report](./Report_FundamentalsofOptimization_IT3052E.pdf) and [presentation](./presentation/Presentation.pdf).
+For more details, please refer to our [full report](./presentation and report/Movie_Recommendation_Report.pdf) and [presentation](./presentation and report/Movie Recommendation.pptx.pdf).
 
 ## Features
 - Personalized movie recommendations
